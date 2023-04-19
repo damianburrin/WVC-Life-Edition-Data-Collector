@@ -15,7 +15,7 @@ AT+SENDICA=property,PV_Volt,50.8,PV_Current,1.09,PV_Power,55.4,AC_Volt,243.2,AC_
 AT+SENDICA=property,PowerSwitch,1,Plant,0.16,Emission,0.09,Time,30,P_adj,66,TEMP_SET,67
 +ok
 
-Current i've tapped the UArt with an open logger and collect the data to a text file on a sdcard to see what I have
+Currently i've tapped the UArt with an open logger and collect the data to a text file on a sdcard to see what I have
 The current python script reads this data from a copy of the text file and then formats the data to be processesed before uploading to ThinkSpeak
 
 I've currently added a 2 min delay as this is how often it would normally send to simulate this and makes sure the free thinkspeak update limits are met

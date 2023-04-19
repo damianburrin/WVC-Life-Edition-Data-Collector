@@ -25,3 +25,13 @@ Store all the data collected in a slqlite database so this can be accessed and a
 Tap the serial UART directly to a GPIO input on a pi so the data is automatically uploaded without the need to manually remove and SD card
 Calcualte the daily energy collected as only the total energy is acutally sent
 
+Register with a free ThingSpeak account - a free account is enough requests for the 2min per day upload done by the inverter
+
+![image](https://user-images.githubusercontent.com/18092613/233067232-51e05831-b3dd-4651-9f8d-82283e4708a2.png)
+
+Set up your fields
+![image](https://user-images.githubusercontent.com/18092613/233067452-5f0564bc-e5bf-4e0e-8cfc-6b77060c2096.png)
+
+Congigure your graphs
+![image](https://user-images.githubusercontent.com/18092613/233067629-367b6bb4-da00-4a8c-bce7-14bc63fc9550.png)
+

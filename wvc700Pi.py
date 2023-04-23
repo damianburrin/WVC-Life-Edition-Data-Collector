@@ -13,6 +13,12 @@ def read_data():
         received_data += ser.read(data_left)
         return (received_data)
 
+def sendData(values):
+
+    url="https://api.thingspeak.com/update?api_key=CONUPB0G78V8Z3HR&field1={0}&field2={1}&field3={2}&field4={3}&field5={4}&field6={5}&field7={6}".format(values[0],values[1],values[2],values[3],values[4],values[5],values[8])
+    response = requests.get(url)    
+    print(values)
+
 
 def format_data(data_rx):
         data=data_rx.split(',')
@@ -36,7 +42,7 @@ while True:
         data_rx=str(data_rx)
         data_rx=data_rx.split(',')
 
-        #print(data_rx[0])
+        #print(data_rx[1])
 
 
                """  values=[]

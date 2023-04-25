@@ -1,4 +1,4 @@
-# WVC-Life-Edition-Data-Collector
+# WVC (Life Edition) Data Collector
 A project to get better data analysis from the WVC R3 Life edition inverters. (Currently tested on the WVC700 R3 Life Edition)
 
 <b>Current understandsing</b>

@@ -9,7 +9,7 @@ def sendData(values):
     #api="CONUPB0G78V8Z3HR"
     #host="api.thingspeak.com"
     #conn_open_tcp(host, 80)
-    url="https://api.thingspeak.com/update?api_key=CONUPB0G78V8Z3HR&field1={0}&field2={1}&field3={2}&field4={3}&field5={4}&field6={5}&field7={6}".format(values[0],values[1],values[2],values[3],values[4],values[5],values[8])
+    url="https://api.thingspeak.com/update?api_key=API&field1={0}&field2={1}&field3={2}&field4={3}&field5={4}&field6={5}&field7={6}".format(values[0],values[1],values[2],values[3],values[4],values[5],values[8])
     response = requests.get(url)
     
     #response = requests.get("""GET /update?api_key={0}&field1={2}&field2={3}&field3={4}&field4={5} HTTP/1.0\r\n Host: {1}\r\nConnection: close\r\n\r\n""".format(api,host,values[0],values[1],values[2],values[3]))

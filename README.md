@@ -15,14 +15,14 @@ It Then sends a cycled serial connection on a permentent loop
 First this
 <b>
 AT+SENDICA=property,PV_Volt,50.8,PV_Current,1.09,PV_Power,55.4,AC_Volt,243.2,AC_Current,0.20,Out_Power,51.0,Temperature,30.0,Power_adjustment,100,Energy,94.89
-+ok
++ok<br>
 </b>
-Then this
+Then this</br>
 <b>
 AT+SENDICA=property,PowerSwitch,1,Plant,0.16,Emission,0.09,Time,30,P_adj,66,TEMP_SET,67
 +ok
 </b></br>
-or this
+or this</br>
 
 <b>
 AT+SENDICA=property,PowerSwitch,1,Daily,0.10,Plant,0.16,Emission,0.09,Time,30,P_adj,66,TEMP_SET,67

@@ -11,47 +11,48 @@ A project to get better data analysis from the WVC R3 Life edition inverters. (C
 ![PINS](https://user-images.githubusercontent.com/18092613/234236983-367b608f-5a6a-4150-9e70-705137ed0e23.jpg)
 
 <br>
-The LIFE edition seems to have no connection from the UART to the J4 header on the board- i'm sure the UART takes and input in as you can power down and change the power limits remotely via the cloud intelligence app but i didn't look to hard as i only wanted to log the data.
+The LIFE edition seems to have no connection from the UART RX to the J4 header on the board- i'm sure the UART takes an input in as you can power down and change the power limits remotely via the cloud intelligence app but i didn't look to hard as i only wanted to log the data.
 
 <p></br>It first makes a connection to the WIFI and It's server (alicloud) on power up</br></p>
 
-<b>+ILOPCONNECT=WIFI_CONNECT</br>
+<b>+ILOPCONNECT=WIFI_CONNECT</br>
 +ILOPCONNECT=SERVER_CONNECT</b>
 
-It Then sends a cycled serial connection on a permentent loop
+It Then sends a cycled serial connection on a permentent loop - the order is set but is really dependent on where you are in the sequence when you start the python script.
 
-First this</br>
+The Main data is sent</br>
 <b>
 AT+SENDICA=property,PV_Volt,50.8,PV_Current,1.09,PV_Power,55.4,AC_Volt,243.2,AC_Current,0.20,Out_Power,51.0,Temperature,30.0,Power_adjustment,100,Energy,94.89
 +ok<br></br>
 </b>
-Then this</br>
+And then this additional data</br>
 <b>
 AT+SENDICA=property,PowerSwitch,1,Plant,0.16,Emission,0.09,Time,30,P_adj,66,TEMP_SET,67
 +ok
 </b></br><br>
-or this</br> 
+or this - note the extra Daily value</br> 
 <b>
 AT+SENDICA=property,PowerSwitch,1,Daily,0.10,Plant,0.16,Emission,0.09,Time,30,P_adj,66,TEMP_SET,67
 +ok</br></br>
 </b>
-<p>For some reason, which I haven't got my head round, sometimes it included the Daily energy before the Plant (Trees) in the second send - it might only send it when this is greater than 0.01 but its a strange one i've written round to be sure i don't through an error and only upload the daily if its there</p>
+<p>For some reason, which I haven't got my head round, sometimes it includes the Daily energy before the Plant (Trees) in the second send - it might only send it when this is greater than 0.01 but its a strange one i've written round to be sure i don't through an error and only upload the daily if its there</p>
 
-Initialy I tapped the UART by tracing the output pins to the JP4 header on the made board and inserted jumper cables to an open logger and collected the data to a text file on a sdcard to see what I have
+Initialy I tapped the HF-LPT270 UART by tracing the output pins to the JP4 header on the inverter main board and inserted jumper cables to an open logger and collected the data to a text file on a sdcard to see what I have.</br></br>
 The first versions of the python script read this data from a copy of the text file and then formats the data to be processesed before uploading to ThinkSpeak.
 ![Inked20230415_133328_LI](https://user-images.githubusercontent.com/18092613/234235022-c4843dd2-7ab7-402a-93a3-801890a17e90.jpg)
 
-I've  added a 2 min delay as this simulated how often i would normally send to make sure the free thinkspeak update limits are met
+I added a 2 min delay as this simulated how often i would normally send to make sure the free thinkspeak update limits are met
 
 <b>Implementing The Pi</b>
 
-Using a Pi Zero (Wifi edition) I've taken the tap for the open logger and transfer the + to the 5v in Pin 4, Ground to Pin 6 and TX to the UART RX GPIO 15 pin 10.  Even though its 3.3 volts  coming from the UART of the inverter this is enough to power the PiZero and handle the load.  I've not connected anything from the TX pin of the PI as i've no need to write back at this point
+Using a Pi Zero (Wifi edition) (about £15) I've taken the tap for the open logger and transfered the + to the 5v in (Pin 4), Ground to  the Pi Ground (Pin 6) and UART TX to the Pi's UART RX (GPIO 15 pin 10).  Even though it's only 3.3 volts coming from the UART of the inverter this is enough to power the PiZero and handle the load.  <br><br>
+I've not connected anything from the TX pin of the PI back to the HF-LPT270 UART as i've no need to write back at this point and am only interested in collecting data for analysis
 
 
 <b>To Do</b>
-Store all the data collected in a slqlite database so this can be accessed and analyised sperately
-fix upload error
-auto start up script as a cron job
+<li>Store all the data collected in a slqlite database so this can be accessed and analyised sperately<br>
+<li>fix upload error<br>
+<li>auto start up script as a cron job<br><br>
 
 <b>To Use</b>
 Register with a free ThingSpeak account - a free account is enough requests for between 2 and 4 minutes upload schedule.  I'll be setting mine to 5 minutes

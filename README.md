@@ -56,10 +56,12 @@ I've not connected anything from the TX pin of the PI back to the HF-LPT270 UART
 <li>fix upload error<br>
 <li>auto start up script as a cron job<br><br>
 
-<b>To Use</b>
+<b>To Use</b><br>
 Register with a free ThingSpeak account - a free account is enough requests for between 2 and 4 minutes upload schedule.  I'll be setting mine to 5 minutes
 
 ![image](https://user-images.githubusercontent.com/18092613/233067232-51e05831-b3dd-4651-9f8d-82283e4708a2.png)
+  
+Make a note of your API key.  You will need to set this in your copy of the python script
 
 Set up your fields to match the image below
 

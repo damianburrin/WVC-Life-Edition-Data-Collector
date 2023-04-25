@@ -1,5 +1,7 @@
 # WVC (Life Edition) Data Collector
 A project to get better data analysis from the WVC R3 Life edition inverters. (Currently tested on the WVC700 R3 Life Edition)
+![20230415_133150](https://user-images.githubusercontent.com/18092613/234233278-d244d30c-0255-4a3f-96bc-27c986949cbd.jpg)
+![20230415_133114](https://user-images.githubusercontent.com/18092613/234233316-eb3c3f2d-cd98-4a34-8e79-3b9246bc3d0d.jpg)
 
 <b>Current understandsing</b>
 
@@ -31,6 +33,7 @@ AT+SENDICA=property,PowerSwitch,1,Daily,0.10,Plant,0.16,Emission,0.09,Time,30,P_
 
 Initialy I tapped the UART with an open logger and collected the data to a text file on a sdcard to see what I have
 The first versions of the python script read this data from a copy of the text file and then formats the data to be processesed before uploading to ThinkSpeak.
+![Inked20230415_133328_LI](https://user-images.githubusercontent.com/18092613/234235022-c4843dd2-7ab7-402a-93a3-801890a17e90.jpg)
 
 I've  added a 2 min delay as this simulated how often i would normally send to make sure the free thinkspeak update limits are met
 

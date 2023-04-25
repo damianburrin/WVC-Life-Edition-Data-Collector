@@ -1,7 +1,7 @@
 # WVC-Life-Edition-Data-Collector
 A project to get better data analysis from the WVC R3 Life edition inverters. (Currently tested on the WVC700 R3 Life Edition)
 
-<p style="color:red">Current understandsing</b></p>
+<b>Current understandsing</b>
 
 The LIFE edition seems to have no connection to the UART for command input - i'm sure there is as you can power down and change the power limits remotely but i didn't look to hard as i only wanted to log the data.
 
@@ -34,17 +34,17 @@ The first versions of the python script read this data from a copy of the text f
 
 I've  added a 2 min delay as this simulated how often i would normally send to make sure the free thinkspeak update limits are met
 
-Implementing The Pi
+<b>Implementing The Pi</b>
 
 Using a Pi Zero (Wifi edition) I've taken the tap for the open logger and transfer the + to the 5v in Pin 4, Ground to Pin 6 and TX to the UART RX GPIO 15 pin 10.  Even though its 3.3 volts  coming from the UART of the inverter this is enough to power the PiZero and handle the load.  I've not connected anything from the TX pin of the PI as i've no need to write back at this point
 
 
-To Do
+<b>To Do</b>
 Store all the data collected in a slqlite database so this can be accessed and analyised sperately
 fix upload error
 auto start up script as a cron job
 
-To Use
+<b>To Use</b>
 Register with a free ThingSpeak account - a free account is enough requests for between 2 and 4 minutes upload schedule.  I'll be setting mine to 5 minutes
 
 ![image](https://user-images.githubusercontent.com/18092613/233067232-51e05831-b3dd-4651-9f8d-82283e4708a2.png)

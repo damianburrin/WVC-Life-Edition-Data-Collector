@@ -13,7 +13,7 @@ A project to get better data analysis from the WVC R3 Life edition inverters. (C
 <br>
 The LIFE edition seems to have no connection from the UART to the J4 header on the board- i'm sure the UART takes and input in as you can power down and change the power limits remotely via the cloud intelligence app but i didn't look to hard as i only wanted to log the data.
 
-<p>It makes a connection to the WIFI and It's server (alicloud) </p>
+<p></br>It first makes a connection to the WIFI and It's server (alicloud) on power up</br></p>
 
 <b>+ILOPCONNECT=WIFI_CONNECT</br>
 +ILOPCONNECT=SERVER_CONNECT</b>

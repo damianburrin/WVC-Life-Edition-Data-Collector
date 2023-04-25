@@ -5,6 +5,8 @@ A project to get better data analysis from the WVC R3 Life edition inverters. (C
 ![20230415_133114](https://user-images.githubusercontent.com/18092613/234233316-eb3c3f2d-cd98-4a34-8e79-3b9246bc3d0d.jpg)
 
 <b>Current understandsing</b>
+<p>The Wifi chip is a HF-LPT270 and fairly well documented online http://www.hi-flying.com/hf-lpt270 and here https://manuals.plus/m/5176309d280b9892c2bce6f24685fa4b934f7f79a321716bc0bc6c0f4dfe03bf_optim.pdf
+ ![Screenshot_20230415_211851_Microsoft 365 (Office)](https://user-images.githubusercontent.com/18092613/234236626-d9aa51c8-04dc-4fbe-b100-60b1a102d878.jpg)</p>
 
 The LIFE edition seems to have no connection to the UART for command input - i'm sure there is as you can power down and change the power limits remotely but i didn't look to hard as i only wanted to log the data.
 

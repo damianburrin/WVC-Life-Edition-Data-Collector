@@ -48,7 +48,7 @@ def upload_data(upload_array):
         #8 element upload main
         #1 element upload aux
         #otherwurse no upload requied
-        url="https://api.thingspeak.com/update?api_key=CONUPB0G78V8Z3HR&field1={0}&field2={1}&field3={2}&field4={3}&field5={4}&field6={5}&field7={6}".format(upload_array[0],upload_array[1],upload_array[2],upload_array[3],upload_array[4]>
+        url="https://api.thingspeak.com/update?api_key=APIKEYHERE&field1={0}&field2={1}&field3={2}&field4={3}&field5={4}&field6={5}&field7={6}".format(upload_array[0],upload_array[1],upload_array[2],upload_array[3],upload_array[4]>
         response = requests.get(url)
 
 

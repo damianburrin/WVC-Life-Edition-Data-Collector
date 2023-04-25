@@ -53,8 +53,8 @@ I've not connected anything from the TX pin of the PI back to the HF-LPT270 UART
 
 <b>To Do</b>
 <li>Store all the data collected in a slqlite database so this can be accessed and analyised sperately<br>
-<li>fix upload error<br>
-<li>auto start up script as a cron job<br><br>
+<li>fix upload error - seem top be a bug when doing long delays.  Need to check serial buffer<br>
+
 
 <b>To Use</b><br>
 Register with a free ThingSpeak account - a free account is enough requests for between 2 and 4 minutes upload schedule.  I'll be setting mine to 5 minutes

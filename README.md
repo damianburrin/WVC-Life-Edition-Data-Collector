@@ -28,7 +28,7 @@ or this
 AT+SENDICA=property,PowerSwitch,1,Daily,0.10,Plant,0.16,Emission,0.09,Time,30,P_adj,66,TEMP_SET,67
 +ok
 </b>
-For some reason I haven't got my head round sometimes it included the daily energy before the Plant in the second send - it might only send it when this is greater than 0.01 but its a strange one i've written round
+<p>For some reason I haven't got my head round sometimes it included the daily energy before the Plant in the second send - it might only send it when this is greater than 0.01 but its a strange one i've written round</p>
 
 Initialy I tapped the UART with an open logger and collected the data to a text file on a sdcard to see what I have
 The first versions of the python script read this data from a copy of the text file and then formats the data to be processesed before uploading to ThinkSpeak.

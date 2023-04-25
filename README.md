@@ -3,7 +3,7 @@ A project to get better data analysis from the WVC R3 Life edition inverters. (C
 
 Current understandsing
 
-The LIFE edition seems to have no connection to the UART for command input - i'm sure there is as you can power down and change the power limits remotely but i didn't look to hard.
+<b>The LIFE edition seems to have no connection to the UART for command input - i'm sure there is as you can power down and change the power limits remotely but i didn't look to hard as i only wanted to log the data.</b>
 
 It makes a connection to the WIFI and It's server (alicloud) 
 

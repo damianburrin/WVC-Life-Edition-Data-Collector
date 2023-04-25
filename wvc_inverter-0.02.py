@@ -15,7 +15,7 @@ def read_data():
 
 def sendData(values):
 
-    url="https://api.thingspeak.com/update?api_key=CONUPB0G78V8Z3HR&field1={0}&field2={1}&field3={2}&field4={3}&field5={4}&field6={5}&field7={6}".format(values[0],values[1],values[2],values[3],values[4],values[5],values[8])
+    url="https://api.thingspeak.com/update?api_key=APIGOESHERE&field1={0}&field2={1}&field3={2}&field4={3}&field5={4}&field6={5}&field7={6}".format(values[0],values[1],values[2],values[3],values[4],values[5],values[8])
     response = requests.get(url)    
     print(values)
 

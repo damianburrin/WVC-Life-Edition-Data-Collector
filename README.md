@@ -1,6 +1,7 @@
 # WVC (Life Edition) Data Collector
 A project to get better data analysis from the WVC R3 Life edition inverters. (Currently tested on the WVC700 R3 Life Edition)
-![20230415_133150](https://user-images.githubusercontent.com/18092613/234233278-d244d30c-0255-4a3f-96bc-27c986949cbd.jpg)
+![Inked20230415_133150_LI](https://user-images.githubusercontent.com/18092613/234235327-2c00d303-561b-4173-b354-c25f6d245ed6.jpg)
+
 ![20230415_133114](https://user-images.githubusercontent.com/18092613/234233316-eb3c3f2d-cd98-4a34-8e79-3b9246bc3d0d.jpg)
 
 <b>Current understandsing</b>

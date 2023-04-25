@@ -3,31 +3,31 @@ A project to get better data analysis from the WVC R3 Life edition inverters. (C
 
 Current understandsing
 
-<b>The LIFE edition seems to have no connection to the UART for command input - i'm sure there is as you can power down and change the power limits remotely but i didn't look to hard as i only wanted to log the data.</b>
+The LIFE edition seems to have no connection to the UART for command input - i'm sure there is as you can power down and change the power limits remotely but i didn't look to hard as i only wanted to log the data.
 
 It makes a connection to the WIFI and It's server (alicloud) 
 
-+ILOPCONNECT=WIFI_CONNECT
-+ILOPCONNECT=SERVER_CONNECT
+<b>+ILOPCONNECT=WIFI_CONNECT</br>
++ILOPCONNECT=SERVER_CONNECT</b>
 
 It Then sends a cycled serial connection on a permentent loop
 
 First this
-
+<b>
 AT+SENDICA=property,PV_Volt,50.8,PV_Current,1.09,PV_Power,55.4,AC_Volt,243.2,AC_Current,0.20,Out_Power,51.0,Temperature,30.0,Power_adjustment,100,Energy,94.89
 +ok
-
+</b>
 Then this
-
+<b>
 AT+SENDICA=property,PowerSwitch,1,Plant,0.16,Emission,0.09,Time,30,P_adj,66,TEMP_SET,67
 +ok
-
+</b>
 or this
 
-
+<b>
 AT+SENDICA=property,PowerSwitch,1,Daily,0.10,Plant,0.16,Emission,0.09,Time,30,P_adj,66,TEMP_SET,67
 +ok
-
+</b>
 For some reason I haven't got my head round sometimes it included the daily energy before the Plant in the second send - it might only send it when this is greater than 0.01 but its a strange one i've written round
 
 Initialy I tapped the UART with an open logger and collected the data to a text file on a sdcard to see what I have

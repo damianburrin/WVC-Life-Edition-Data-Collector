@@ -1,7 +1,7 @@
 # WVC-Life-Edition-Data-Collector
 A project to get better data analysis from the WVC R3 Life edition inverters. (Currently tested on the WVC700 R3 Life Edition)
 
-Current understandsing
+<b><font colour = "RED">Current understandsing</b></font>
 
 The LIFE edition seems to have no connection to the UART for command input - i'm sure there is as you can power down and change the power limits remotely but i didn't look to hard as i only wanted to log the data.
 

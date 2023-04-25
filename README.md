@@ -23,7 +23,6 @@ AT+SENDICA=property,PowerSwitch,1,Plant,0.16,Emission,0.09,Time,30,P_adj,66,TEMP
 +ok
 </b></br><br>
 or this</br>
-
 <b>
 AT+SENDICA=property,PowerSwitch,1,Daily,0.10,Plant,0.16,Emission,0.09,Time,30,P_adj,66,TEMP_SET,67
 +ok</br></br>

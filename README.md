@@ -12,21 +12,21 @@ It makes a connection to the WIFI and It's server (alicloud)
 
 It Then sends a cycled serial connection on a permentent loop
 
-First this
+First this</br>
 <b>
 AT+SENDICA=property,PV_Volt,50.8,PV_Current,1.09,PV_Power,55.4,AC_Volt,243.2,AC_Current,0.20,Out_Power,51.0,Temperature,30.0,Power_adjustment,100,Energy,94.89
 +ok<br>
 </b>
-Then this</br>
+Then this</br></br>
 <b>
 AT+SENDICA=property,PowerSwitch,1,Plant,0.16,Emission,0.09,Time,30,P_adj,66,TEMP_SET,67
 +ok
-</b></br>
-or this</br>
+</b></br><br>
+or this</br></br>
 
 <b>
 AT+SENDICA=property,PowerSwitch,1,Daily,0.10,Plant,0.16,Emission,0.09,Time,30,P_adj,66,TEMP_SET,67
-+ok
++ok</br></br>
 </b>
 <p>For some reason, Which I haven't got my head round, sometimes it included the Daily energy before the Plant (Trees) in the second send - it might only send it when this is greater than 0.01 but its a strange one i've written round to be sure i don't through an error and only upload the daily if its there</p>
 

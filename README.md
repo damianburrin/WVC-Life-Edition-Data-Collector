@@ -38,6 +38,10 @@ AT+SENDICA=property,PowerSwitch,1,Daily,0.10,Plant,0.16,Emission,0.09,Time,30,P_
 <p>For some reason, which I haven't got my head round, sometimes it includes the Daily energy before the Plant (Trees) in the second send - it might only send it when this is greater than 0.01 but its a strange one i've written round to be sure i don't throw an error and only upload the daily if its there</p>
 
 Initialy I tapped the HF-LPT270 UART by tracing the output pins to the JP4 header on the inverter main board and inserted jumper cables to an open logger and collected the data to a text file on a sdcard to see what I have.</br></br>
+
+![Capture3](https://user-images.githubusercontent.com/18092613/234678467-3cc8e391-3103-483f-9b58-dfbc72d7a9f2.JPG)
+
+
 The first versions of the python script read this data from a copy of the text file and then formats the data to be processesed before uploading to ThinkSpeak.
 ![Inked20230415_133328_LI](https://user-images.githubusercontent.com/18092613/234235022-c4843dd2-7ab7-402a-93a3-801890a17e90.jpg)
 

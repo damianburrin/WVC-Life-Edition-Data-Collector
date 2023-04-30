@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import serial
 from time import sleep
+from datetime import datetime
 import requests
 upload_array=[]
 ser = serial.Serial ("/dev/ttyS0", 115200)
@@ -52,7 +53,6 @@ def format_data(data_rx):
                 return(upload_array)
 
 #                       print(data_rx)
-
 def upload_data(upload_array):
 
 #       print(len(upload_array))
@@ -79,19 +79,25 @@ def upload_data(upload_array):
                 ser.reset_input_buffer()
 
 while True:
-
 #do two uploads before pause
         ser.reset_input_buffer()
         sleep(0.3)
         for count in range (2):
+                #added some log to file while running as background process
+                now=datetime.now()
+                dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
+
+                f=open("solarlog.txt","a")
                 upload_array=[]
                 data_rx = read_data()
                 print(data_rx)
                 upload_array=format_data(data_rx)
-                print("UPLOAD",upload_array)
+                print(dt_string,upload_array,file=f)
+                f.close()
                 upload_data(upload_array)
                 ser.reset_input_buffer()
         #this is the time between uploads keep about 2 minutes  for free thingspeak account
         sleep(30)
         ser.reset_input_buffer()
+
 

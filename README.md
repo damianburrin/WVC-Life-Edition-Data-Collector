@@ -49,6 +49,8 @@ I added a 2 min delay as this simulated how often i would normally send to make 
 
 <b>Implementing The Pi</b>
 
+![20230430_163231](https://user-images.githubusercontent.com/18092613/235365455-16fb6488-a7b9-40fe-8787-7cbd85594602.jpg)
+
 ![PIPINS](https://user-images.githubusercontent.com/18092613/234257432-985cef0f-196d-4d22-b502-a0df802867ba.JPG)
 
 Using a Pi Zero (Wifi edition) (about £15) I've taken the tap for the open logger and transfered the + to the 5v in (Pin 4), Ground to  the Pi Ground (Pin 6) and UART TX to the Pi's UART RX (GPIO 15 pin 10).  Even though it's only 3.3 volts coming from the UART of the inverter this is enough to power the PiZero and handle the load.  <br><br>

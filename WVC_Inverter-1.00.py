@@ -4,7 +4,7 @@ import requests
 upload_array=[]
 ser = serial.Serial ("/dev/ttyS0", 115200)
 
-API="CONUPB0G78V8Z3HR"
+API=""
 # do something to auto start on pi - schedule task
 
 

@@ -5,7 +5,8 @@ from datetime import datetime
 import requests
 upload_array=[]
 ser = serial.Serial ("/dev/ttyS0", 115200)
-DayEnergy=0
+global DayEnergy
+DayEnergy = 0
 API="THINGSPEAK API HERE"
 # do something to auto start on pi - schedule task
 
@@ -21,13 +22,28 @@ def read_data():
 
 
 def format_data(data_rx):
-
+        
+        
         data_rx=str(data_rx)
         data_rx=data_rx.split(',')
 #       print(data_rx)
         if data_rx[0]=="b'AT+SENDICA=property":
 #               print("found")
+                
                 if data_rx[1]=="PV_Volt":
+#                       print("data found")
+                        #print("PV_Volt=",data_rx[2],"PV_Current=",data_rx[4],"PV_Power=",data_rx[6],"AC_Volt=",data_rx[8],"AC_Current=",data_rx[10],"Out_Power=",data_rx[12],"Temperature=",data_rx[14],"Power_adjustment=",data_rx[16],"En>
+                        try:
+                                mod_last_element = data_rx[18]
+                                data_rx[18] = mod_last_element[0:6] #trim the trailing mew line characters
+                                for count in range(2,20,2):
+                                        upload_array.append(data_rx[count])
+                #       print("MAIN",upload_array)
+                        except:
+                                print("Error trimming - aborting send")
+
+
+
 #                       print("data found")
                         #print("PV_Volt=",data_rx[2],"PV_Current=",data_rx[4],"PV_Power=",data_rx[6],"AC_Volt=",data_rx[8],"AC_Current=",data_rx[10],"Out_Power=",data_rx[12],"Temperature=",data_rx[14],"Power_adjustment=",data_rx[16],"En>
                         mod_last_element = data_rx[18]
@@ -92,7 +108,7 @@ while True:
                 f=open("solarlog.txt","a")
                 upload_array=[]
                 data_rx = read_data()
-                print(data_rx)
+                #print(data_rx)
                 upload_array=format_data(data_rx)
                 upload_data(upload_array)
                 print(dt_string,upload_array,file=f)

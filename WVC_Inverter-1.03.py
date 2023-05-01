@@ -81,12 +81,12 @@ def upload_data(upload_array):
                 if len(upload_array)==9:
                         url="https://api.thingspeak.com/update?api_key={7}&field1={0}&field2={1}&field3={2}&field4={3}&field5={4}&field6={5}&field7={6}".format(upload_array[0],upload_array[1],upload_array[2],upload_array[3],upload_array[4],upload_array[5],upload_array[8],API)
 
-                        print("uploading data")
+                        print("uploading data",upload_array)
                         response = requests.get(url)
 #                       print(response) # testing
                 elif len(upload_array)==1:
                         url="https://api.thingspeak.com/update?api_key={1}&field8={0}".format(upload_array[0],API)
-                        print("uploading daily")
+                        print("uploading daily",upload_array)
                         response = requests.get(url)
 #                       print(response) #testing
                 else:

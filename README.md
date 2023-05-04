@@ -70,7 +70,6 @@ Set up your fields to match the image below
 
 
 Congigure your graphs - see my example.  THis is up to you really.  
-![image](https://user-images.githubusercontent.com/18092613/233067629-367b6bb4-da00-4a8c-bce7-14bc63fc9550.png)
 
 ![Capture](https://user-images.githubusercontent.com/18092613/236232260-4ddc080b-ae5f-4b26-9f4a-7cf8dd2fd8ca.JPG)
 

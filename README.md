@@ -73,7 +73,6 @@ Congigure your graphs - see my example.  THis is up to you really.
 
 ![Capture](https://user-images.githubusercontent.com/18092613/236232260-4ddc080b-ae5f-4b26-9f4a-7cf8dd2fd8ca.JPG)
 
- ![Capture2](https://user-images.githubusercontent.com/18092613/234677349-48bf4ba5-0e97-47fc-b27d-e848fbc75767.JPG)
 
  <BR><BR>
  For autostarting i'm using the following in my CRONTAB (crontab -e to edit)  <b>@reboot nhup python /solar/solar_rx.py &</b>

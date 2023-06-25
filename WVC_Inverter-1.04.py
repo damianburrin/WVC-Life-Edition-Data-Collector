@@ -33,8 +33,10 @@ def format_data(data_rx,DayEnergy):
 #			print("data found")
 			#print("PV_Volt=",data_rx[2],"PV_Current=",data_rx[4],"PV_Power=",data_rx[6],"AC_Volt=",data_rx[8],"AC_Current=",data_rx[10],"Out_Power=",data_rx[12],"Temperature=",data_rx[14],"Power_adjustment=",data_rx[16],"Energy=",data_rx[18])
 			try:
+				import re
 				mod_last_element = data_rx[18]
-				data_rx[18] = mod_last_element[0:6] #trim the trailing mew line characters
+				data_rx[18] = re.sub("[^0-9.]","",data_rx[18])#us reg ex to trip the crap at the end
+				#data_rx[18] = mod_last_element[0:6] #trim the trailing mew line characters
 				for count in range(2,20,2):
 					upload_array.append(data_rx[count])
 		#	print("MAIN",upload_array)

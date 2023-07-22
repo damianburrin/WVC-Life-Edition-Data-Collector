@@ -75,7 +75,7 @@ Congigure your graphs - see my example.  THis is up to you really.
 
 
  <BR><BR>
- For autostarting i'm using the following in my CRONTAB (crontab -e to edit)  <b>@reboot nhup python /solar/solar_rx.py &</b>
+ For autostarting i'm using the following in my CRONTAB (crontab -e to edit)  <b>@reboot nohup python solar/solar_rx.py &</b>
  <BR><BR>
    
  I've currently set my upload time to 30 seconds - This is using about 1200 messages a day - the free account allows for 8219 messages a day.  No doubt i'll use more in the longer days but i don't expect to go over the free limit.

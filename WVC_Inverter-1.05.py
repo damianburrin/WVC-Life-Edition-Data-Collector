@@ -5,8 +5,8 @@ from datetime import datetime
 import requests
 upload_array=[]
 ser = serial.Serial ("/dev/ttyS0", 115200)
-global DayEnergy
-DayEnergy = 0
+#global DayEnergy
+DayEnergy = "0"
 
 API="B1OSX1Q7GS7Y611B"
 # do something to auto start on pi - schedule task
@@ -49,7 +49,7 @@ def format_data(data_rx,DayEnergy):
             if data_rx[3]=="Plant":
                 print("plant")
             elif data_rx[3]=="Day_Energy":
-                DayEnergy=data_rx[4]
+                DayEnergy=data_rx[4]              
                 print("Daily",DayEnergy)
                 upload_array.append(data_rx[4])
 #		print("day energ=",data_rx[4],"Tree=",data_rx[6],"Emissions=",data_rx[8])

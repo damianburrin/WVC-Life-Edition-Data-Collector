@@ -5,7 +5,6 @@ from datetime import datetime
 import requests
 upload_array=[]
 ser = serial.Serial ("/dev/ttyS0", 115200)
-#global DayEnergy
 DayEnergy = "0"
 
 API="B1OSX1Q7GS7Y611B"
@@ -35,7 +34,7 @@ def format_data(data_rx,DayEnergy):
             try:
                 import re
                 mod_last_element = data_rx[18]
-                data_rx[18] = re.sub("[^0-9.]","",data_rx[18])#us reg ex to trip the crap at the end
+                data_rx[18] = re.sub("[^0-9.]","",data_rx[18])#us reg ex to strip the crap at the end
                 #data_rx[18] = mod_last_element[0:6] #trim the trailing mew line characters
                 for count in range(2,20,2):
                     upload_array.append(data_rx[count])
@@ -48,6 +47,7 @@ def format_data(data_rx,DayEnergy):
             print("Aux dat found!")
             if data_rx[3]=="Plant":
                 print("plant")
+                
             elif data_rx[3]=="Day_Energy":
                 DayEnergy=data_rx[4]              
                 print("Daily",DayEnergy)
@@ -67,6 +67,7 @@ def upload_data(upload_array):
 #	upload data and aux data
     try:
         len(upload_array)
+        print(len(upload_array))####
         
 #
         if len(upload_array)==9:
@@ -74,18 +75,20 @@ def upload_data(upload_array):
             url="https://api.thingspeak.com/update?api_key={7}&field1={0}&field2={1}&field3={2}&field4={3}&field5={4}&field6={5}&field7={6}".format(upload_array[0],upload_array[6],upload_array[2],upload_array[3],upload_array[7],upload_array[5],upload_array[8],API)
             print("uploading data",upload_array)
             response = requests.get(url)
-    #		print(response) # testing
+            #print(response) # testing
+            
         elif len(upload_array)==1:
             url="https://api.thingspeak.com/update?api_key={1}&field8={0}".format(upload_array[0],API)
             print("uploading daily",upload_array)
             response = requests.get(url)
-#	    print(response) #testing
+            #print(response) #testing
         else:
             url="https://api.thingspeak.com/update?api_key={1}&field8={0}".format(DayEnergy,API)
             response = requests.get(url)
             print("uploading remembered",DayEnergy)
+            #print(response) #testing
     except:
-        print("Data uplad error")
+        print("Data upload error")
         ser.reset_input_buffer()
 
 while True:

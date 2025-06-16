@@ -39,7 +39,8 @@ AT+SENDICA=property,PowerSwitch,1,Daily,0.10,Plant,0.16,Emission,0.09,Time,30,P_
 
 Initialy I tapped the HF-LPT270 UART by tracing the output pins to the JP4 header on the inverter main board and inserted jumper cables to an open logger and collected the data to a text file on a sdcard to see what I have.</br></br>
 
-![Capture3](https://user-images.githubusercontent.com/18092613/234678467-3cc8e391-3103-483f-9b58-dfbc72d7a9f2.JPG)
+
+![image](https://github.com/user-attachments/assets/5f22fb8e-7336-4dbf-b539-b683d3c200ec)
 
 
 The first versions of the python script read this data from a copy of the text file and then formats the data to be processesed before uploading to ThinkSpeak.
